@@ -20,6 +20,7 @@ BuildRequires:  perl-SVN-Notify
 BuildRequires:  subversion-tools
 BuildRequires:  sendmail-command
 BuildArch:	noarch
+BuildRoot:	%{_tmppath}/%{name}-%{version}
 
 %description
 Keep a local directory in sync with a portion of a Subversion repository.
