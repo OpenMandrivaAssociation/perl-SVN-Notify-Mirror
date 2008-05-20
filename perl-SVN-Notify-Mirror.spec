@@ -1,6 +1,6 @@
 %define module	SVN-Notify-Mirror
 %define name	perl-%{module}
-%define version	0.037
+%define version	0.038
 %define up_version	0.035
 %define	release	%mkrel 1
 
