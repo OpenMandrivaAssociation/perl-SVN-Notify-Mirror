@@ -1,22 +1,21 @@
-%define module	SVN-Notify-Mirror
-%define name	perl-%{module}
-%define version	0.038
-%define up_version	0.035
-%define	release	%mkrel 2
+%define upstream_name	 SVN-Notify-Mirror
+%define upstream_version 0.038
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{upstream_name}
+Version:	%perl_convert_version %{upstream_version}
+Release:	%mkrel 1
+
 Summary:	Keep a mirrored working copy of a repository path
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source:		http://www.cpan.org/modules/by-module/SVN/%{module}-%{up_version}.tar.bz2
+URL:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	http://www.cpan.org/modules/by-module/SVN/%{upstream_name}-%{upstream_version}.tar.gz
+
 %if %{mdkversion} < 1010
 BuildRequires:	perl-devel
 %endif
-BuildRequires:  perl-Module-Build
-BuildRequires:  perl-SVN-Notify
+BuildRequires:  perl(Module::Build)
+BuildRequires:  perl(SVN::Notify)
 BuildRequires:  subversion-tools
 BuildRequires:  sendmail-command
 BuildArch:	noarch
@@ -31,7 +30,7 @@ NOTE: because 'svn export' is not able to be consistently updated, the sync'd
 directory must be a full working copy.
 
 %prep
-%setup -q -n %{module}-%{up_version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 perl Build.PL installdirs=vendor << EOF
