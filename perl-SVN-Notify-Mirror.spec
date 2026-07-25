@@ -2,14 +2,14 @@
 %define upstream_version 0.040
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version %{upstream_version}
-Release:	3
+Version:	%{upstream_version}
+Release:	4
 
 Summary:	Keep a mirrored working copy of a repository path
 License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		https://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/SVN/%{upstream_name}-%{upstream_version}.tar.gz
+URL:		https://metacpan.org/dist/SVN-Notify-Mirror
+Source0:	https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK/SVN-Notify-Mirror-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Module::Build)
