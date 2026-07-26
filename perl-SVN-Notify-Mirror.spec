@@ -1,15 +1,13 @@
 %define upstream_name    SVN-Notify-Mirror
-%define upstream_version 0.040
-
 Name:		perl-%{upstream_name}
-Version:	%{upstream_version}
-Release:	4
+Version:	0.040
+Release:	5
 
 Summary:	Keep a mirrored working copy of a repository path
 License:	GPL+ or Artistic
 Group:		Development/Perl
 URL:		https://metacpan.org/dist/SVN-Notify-Mirror
-Source0:	https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK/SVN-Notify-Mirror-%{upstream_version}.tar.gz
+Source0:	https://cpan.metacpan.org/authors/id/J/JP/JPEACOCK/SVN-Notify-Mirror-%{version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildRequires:	perl(Module::Build)
@@ -27,7 +25,7 @@ NOTE: because 'svn export' is not able to be consistently updated, the sync'd
 directory must be a full working copy.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 perl Build.PL installdirs=vendor << EOF
@@ -52,8 +50,7 @@ export LC_ALL=C
 * Fri Jul 24 2009 JÃ©rÃ´me Quelin <jquelin@mandriva.org> 0.38.0-1mdv2010.0
 + Revision: 399449
 - updated to 0.038 (for real this time)
-- using %%perl_convert_version
-- fixed license field
+- using %0.040 fixed license field
 
 * Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.038-2mdv2009.0
 + Revision: 268721
